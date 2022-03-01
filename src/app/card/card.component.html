@@ -1,0 +1,14 @@
+<div class="bg-white px-10 py-12 rounded-xl w-screen shadow-md max-w-sm">
+    <img class="h-48 mx-auto" src="assets/tomato.svg" alt="tomato timer">
+
+    <div class="text-center mb-4 bg-slate-100 rounded-md">
+        <countdown #cd [config]="{leftTime: totalSeconds, format: 'mm:ss', demand: true }" class="text-5xl text-center text-gray-400"></countdown>
+    </div>
+
+    <div class="text-center mt-4">
+        <input (click)="cd.restart()" type="image" class="button" src="assets/arrow-rotate-left-duotone.svg">
+        <input (click)="cd.begin()" type="image" class="button" src="assets/circle-play-duotone.svg">
+        <input (click)="cd.pause()" type="image" class="button" src="assets/circle-stop-duotone.svg">
+    </div>
+
+</div>
