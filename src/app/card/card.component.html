@@ -5,10 +5,11 @@
         <countdown #cd [config]="{leftTime: totalSeconds, format: 'mm:ss', demand: true, notify: 0}" (event)="handleCountDown($event)" class="text-5xl text-center text-gray-400 time"></countdown>
     </div>
 
-    <div class="text-center mt-4">
-        <input (click)="cd.restart()" type="image" class="button" src="assets/arrow-rotate-left-duotone.svg">
-        <input (click)="cd.begin()" type="image" class="button" src="assets/circle-play-duotone.svg">
-        <input (click)="cd.pause()" type="image" class="button" src="assets/circle-stop-duotone.svg">
+    <div class="text-center mt-4" *ngIf="!running">
+        <input (click)="onClick()" type="image" class="button" src="assets/circle-play-duotone.svg">
+    </div>
+    <div class="text-center mt-4" *ngIf="running">
+        <input (click)="onClick()" type="image" class="button" src="assets/circle-pause-duotone.svg">
     </div>
 
 </div>

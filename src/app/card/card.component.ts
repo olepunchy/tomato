@@ -11,10 +11,12 @@ import { CountdownComponent, CountdownEvent } from 'ngx-countdown';
 export class CardComponent implements OnInit {
 
   totalSeconds = 1500; // 25 minutes
+  running = false;
 
   titleTime = "25:00";
 
   @ViewChild('cd', { static: false }) private countdown: CountdownComponent;
+  audio = new Audio();
 
   start() {
     this.countdown.begin();
@@ -26,6 +28,23 @@ export class CardComponent implements OnInit {
 
   reset() {
     this.countdown.restart();
+  }
+
+  onClick() {
+    this.playClick();
+    this.running = !this.running;
+
+    if (this.running) {
+      this.countdown.begin();
+    } else {
+      this.countdown.pause();
+    }
+  }
+
+  playClick() {
+    this.audio.src = "../assets/click.ogg";
+    this.audio.load();
+    this.audio.play();
   }
 
   handleCountDown(event: CountdownEvent) {
