@@ -1,6 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Roboto&family=Ubuntu+Mono&display=swap");
+
 .button {
   width: 64px;
   margin: 1rem;
   filter: invert(80%) sepia(54%) saturate(3899%) hue-rotate(331deg)
     brightness(100%) contrast(98%);
+}
+
+.time {
+  font-family: "JetBrains Mono", monospace;
 }

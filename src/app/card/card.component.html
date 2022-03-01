@@ -2,7 +2,7 @@
     <img class="h-48 mx-auto" src="assets/tomato.svg" alt="tomato timer">
 
     <div class="text-center mb-4 bg-slate-100 rounded-md">
-        <countdown #cd [config]="{leftTime: totalSeconds, format: 'mm:ss', demand: true }" class="text-5xl text-center text-gray-400"></countdown>
+        <countdown #cd [config]="{leftTime: totalSeconds, format: 'mm:ss', demand: true, notify: 0}" (event)="handleCountDown($event)" class="text-5xl text-center text-gray-400 time"></countdown>
     </div>
 
     <div class="text-center mt-4">
